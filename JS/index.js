@@ -13,6 +13,7 @@ function getDataFromApi(searchTerm, callback) {
     dataType: 'json',
     type: 'GET',
     success: callback,
+    timeout: 5000,
     error: function() {
       alert('error loading video');
     }
@@ -41,6 +42,8 @@ function displayYoutubeSearchData(data) {
   console.log(data);
   const results = data.items.map((item, index) => renderResult(item));
   $('.js-search-results').html(results);
+  $('#pageTokenPrev').val(data.prevPageToken);
+  $('#pageTokenNext').val(data.nextPageToken);
 }
 
 function watchSubmit() {
@@ -60,11 +63,3 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
   event.preventDefault();
   $(this).ekkoLightbox();
 });
-
-/*
-<a class="js-result-thumbnail" href="https://www.youtube.com/watch?v=${result.id.videoId}"
-  target="_blank" data-toggle="lightbox">
-  <img src="${result.snippet.thumbnails.medium.url}"
-  alt="thumbnail of youtube video" class="js-result-thumbnail">
-</a>
-*/
