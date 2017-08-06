@@ -10,30 +10,29 @@
 </head>
 
 <body>
-  <main>
+  <main role='main'>
     <h1>Look up your favorite videos!</h1>
     <form action='#' class='js-search-form'>
       <label for='query'></label>
-      <input type='text' class='js-query'>
+      <input type='text' name='query' class='js-query'>
       <button type='submit'>Search</button>
     </form>
 
     <h2>Results</h2>
-    <div class='js-search-results'></div>
+    <div class='js-search-results' aria-live='assertive' hidden></div>
     <div>
-      <div class="btn-group" role="group" aria-label="Prev and Next buttons">
-        <button type="button" id="pageTokenPrev" value="" class="btn btn-default">Prev</button>
-        <button type="button" id="pageTokenNext" value="" class="btn btn-default">Next</button>
+      <div class="btn-group" role="group" aria-labelledby="Prev and Next buttons">
+        <button type="button" role='button' id="pageTokenPrev" value="" class="btn btn-default">Prev</button>
+        <button type="button" role='button' id="pageTokenNext" value="" class="btn btn-default">Next</button>
     </div>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
   <script type='text/javascript' src='JS/index.js'></script>
 </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
-  <script type="text/javascript" src="JS/index.js"></script>
 </html>
 
 
